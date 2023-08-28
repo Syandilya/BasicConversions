@@ -1,0 +1,32 @@
+    public static int hextodeci(String t)
+    {
+	    for(int i=0;i<t.length();i++)
+	    {
+	        char c= t.charAt(i);
+	        if((c>'F')||(c>='a'&&c<='z'))
+	       { System.out.println("InvaliD Characters");
+	        return 0;
+	          }
+	        
+	    }
+	    int k=t.length()-1;
+	    int sum=0;
+	    for(int i=0;i<t.length();i++)
+	    {   
+	        char c=t.charAt(k);
+	        int d=0;
+	        if(c>='A'&&c<='F')
+	        {
+	            sum=sum+(int)(((int)c-64+9)*Math.pow(16,i));
+	        }
+	        else
+	        {
+	            sum=sum+(int)(((int)c-48)*Math.pow(16,i));
+	        }
+	        k--;
+	        
+	    }
+	    return sum;
+	    
+        
+    }
